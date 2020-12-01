@@ -1,12 +1,12 @@
-<?php 
+<?php
+
 session_start();
-
-
-if ($_SESSION['loggedin'] = false) 
+include ('logout.php');
+if (!isset($_SESSION['username']))
  {
     header("location:admin-login.php");
  }
- elseif($_SESSION['loggedin'] = true)
+ elseif(isset($_SESSION['username']))
  {
       
 
@@ -275,8 +275,14 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
                                         </div>
                                     </div>
                                     <div class="account-dropdown__footer">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-power"></i>Logout</a>
+                                        <a href="">
+                                            <i class="zmdi zmdi-power"></i><?php 
+											session_destroy(); 
+											//unset($_COOKIE['username']);
+											echo $_COOKIE['username'];
+											setcookie("username", $_COOKIE['username'], time() - (86400 * 32), "/");
+											header("location:admin-login.php");
+											?>Logout</a>
                                     </div>
                                 </div>
                             </div>
@@ -565,15 +571,11 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="title-4">Welcome back
-                                <span><?php if (isset($_SESSION['loggedin'])) 
-                                        {
+                                <span><?php 
+                                        
                                             echo $_SESSION['username']."!";
-                                            
-                                        }
-                                        else
-                                        {
-                                            header("location:admin-login.php");
-                                        }?></span>
+                                            ?></span>
+											
                             </h1>
                             <hr class="line-seprate">
                         </div>

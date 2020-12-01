@@ -3,8 +3,11 @@
 Session_start();
 if (isset($_COOKIE['username'])) 
     {
+	
     $_SESSION['username'] = $_COOKIE['username'];
-    }
+	header("location:admin-dash.php");
+	echo $_SESSION['username'];
+    }else{
 
 $servername = "localhost";
 $username = "root";
@@ -12,42 +15,48 @@ $password = "";
 $dbname = "test";
 $conn = mysqli_connect($servername,$username,$password,$dbname);
 
-$result = mysqli_query($conn,"SELECT * from admin_tbl");
-$row = mysqli_fetch_array($result);
+
 if(isset($_POST['sub']))
     {
+		
+		echo $_POST['rem'];
+		
+		$result = mysqli_query($conn,"SELECT * from admin_tbl where admin_name = '".$_POST['username']."'");
+		$row = mysqli_fetch_array($result);
             $username = $_POST['username'];
            // $hash = password_hash($_POST['password'] , PASSWORD_DEFAULT);
            $pass = $_POST['password'];
             
             
 
-            if (isset($_POST['remember'])) 
+/*             if (!empty($_POST['rem'])) 
                 {
-                    $remember = $_POST['remember'];
+                    $remember = true;
                 } 
             else 
                 {
-                    $remember = false;
-                }
+                    $remember =false;
+                } */
 
-                        $result = mysqli_query($conn,"SELECT * from admin_tbl");
-                        $row = mysqli_fetch_array($result);
+                        //$result = mysqli_query($conn,"SELECT * from admin_tbl where admin_name = '".$_POST['username']."'");
+                        //$row = mysqli_fetch_array($result);
 
-                   
+						echo $row['admin_pass'];
                     
                         if($username == $row['admin_name'] && password_verify($pass,$row ['admin_pass']))
                         {
-                            if ($remember) 
+							$remember = true;
+                            if ($remembe=true) 
                                 {
-                                    setcookie('username', $username, time() + 60);
+									//$cookie_name = "username";
+                                    //setcookie($cookie_name, $username, time() + (86400 * 30), "/");
                                 } 
                                 else
                                 {
-                                 // setcookie('username', $username, time() - 30);
+                                  //setcookie('username', $username, time() - 30);
                                 }
                             
-                            if (isset($_SESSION['loggedin'])) {
+                            if (!isset($_SESSION['loggedin'])) {
                              $_SESSION['username'] = $_POST['username'];
                             //$_SESSION['message'] = 'Welcome ' . $_SESSION['username'] . '!';
                             //$_SESSION['msg_type'] = "success";  
@@ -65,11 +74,20 @@ if(isset($_POST['sub']))
                  
 
                     }                 
+	}
+
+
+function logoutAction1()
+{
+    
+setcookie("username", "", time() - 700000000000);
+return true;
+}
 
 
 ?>
 
-
+	
 
 <!DOCTYPE html>
 <html lang="en">
@@ -131,7 +149,7 @@ if(isset($_POST['sub']))
                                 </div>
                                 <div class="login-checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember">Remember Me
+                                        <input type="checkbox" name="rem" value="true" id = "rem"/>Remember Me
                                     </label>
                                     <label>
                                         <a href="#">Forgotten Password?</a>
