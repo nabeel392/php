@@ -154,9 +154,7 @@ alert("invalid");
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="#">
-                                <img src="images/icon/logo.png" alt="CoolAdmin">
-                            </a>
+                        <h1>  Add Cars</h1>
                         </div>
                         <div class="login-form">
                             <form action="" method="post" enctype="multipart/form-data">

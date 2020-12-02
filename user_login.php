@@ -108,9 +108,7 @@ $row = mysqli_fetch_array($result);
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="#">
-                                <img src="images/icon/logo.png" alt="CoolAdmin">
-                            </a>
+                        <h1>  User login</h1>
                         </div>
                         <div class="login-form">
                             <form action="user_login.php" method="post">
