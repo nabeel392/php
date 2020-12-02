@@ -25,7 +25,7 @@ if(isset($_POST['sub']))
 	}
 
 	 $admin_address = $_POST['admin_address'];
-	 if(preg_match("/[A-Za-z]/",$admin_address)){
+	 if(preg_match("/[A-Za-z0-9]+@+[a-z]+.+[a-z]/",$admin_address)){
 	//echo " matching";
 	$address = 1;
 	}
@@ -57,10 +57,12 @@ if(isset($_POST['sub']))
 	 mysqli_close($conn);
 }
 else{
+    //echo "Regex Is Used Do Not Be Smart";
 	?>
 <script>
 alert("invalid");
 </script>
+
 	<?php
 }
 }
@@ -126,8 +128,8 @@ alert("invalid");
                                     <input class="au-input au-input--full" class="text" type="text" name="admin_name" placeholder="your name" required >
                                 </div>
                                 <div class="form-group">
-                                    <label>Address</label>
-                                    <input class="au-input au-input--full"  class="text " type="text" name="admin_address" placeholder="address" required>
+                                    <label>Email</label>
+                                    <input class="au-input au-input--full"  class="text " type="text" name="admin_address" placeholder="Email address" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>

@@ -76,7 +76,7 @@ endif
 							<tr class="row100 head">
 								<th class="column100 column1" data-column="column1">ID</th>
 								<th class="column100 column2" data-column="column2">Name</th>
-								<th class="column100 column3" data-column="column3">Address</th>
+								<th class="column100 column3" data-column="column3">Email</th>
 								<th class="column100 column4" data-column="column4">Password</th>
 								
 							

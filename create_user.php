@@ -33,7 +33,7 @@ if(isset($_POST['sub']))
 		$fname= 0;
 	}
     $cust_email = $_POST['cust_email'];
-	if(preg_match("/[A-Za-z]/",$cust_email)){
+	if(preg_match("/[A-Za-z0-9]+@+[a-z]+.+[a-z]/",$cust_email)){
 	//	$nameErr = "invalid username";
 	//echo " matching";
 	$email = 1;
