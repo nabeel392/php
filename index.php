@@ -38,7 +38,7 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
 				<li>Give us a call : +66666666 </li>
 			</ul>
 			<ul class="logreg">
-				<li><a href="user_login.php">Login </a> </li>
+				<li><a href="php/user_login.php">Login </a> </li>
 				<li><a href="#"><span class="register">Register</span></a></li>
 			</ul>
 	</div>
