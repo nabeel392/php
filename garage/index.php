@@ -39,7 +39,7 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
 			</ul>
 			<ul class="logreg">
 				<li><a href="user_login.php">Login </a> </li>
-				<li><a href="#"><span class="register">Register</span></a></li>
+				<li><a href="create_user.php"><span class="register">Register</span></a></li>
 			</ul>
 	</div>
 	<!-- Navbar Up -->
