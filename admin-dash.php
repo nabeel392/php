@@ -275,14 +275,10 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
                                         </div>
                                     </div>
                                     <div class="account-dropdown__footer">
-                                        <a href="">
-                                            <i class="zmdi zmdi-power"></i><?php 
-											session_destroy(); 
-											//unset($_COOKIE['username']);
-											echo $_COOKIE['username'];
-											setcookie("username", $_COOKIE['username'], time() - (86400 * 32), "/");
-											header("location:admin-login.php");
-											?>Logout</a>
+                                        <a href="logout.php">
+                                            <i class="zmdi zmdi-power"></i>
+                                            Logout
+                                        </a>
                                     </div>
                                 </div>
                             </div>

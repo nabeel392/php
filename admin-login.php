@@ -1,93 +1,76 @@
 <?php
 
-Session_start();
-if (isset($_COOKIE['username'])) 
-    {
-	
+session_start();
+
+if (isset($_COOKIE['username'])) {
     $_SESSION['username'] = $_COOKIE['username'];
 	header("location:admin-dash.php");
 	echo $_SESSION['username'];
-    }else{
+} else {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "test";
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "test";
-$conn = mysqli_connect($servername,$username,$password,$dbname);
+    $conn = mysqli_connect($servername,$username,$password,$dbname);
 
-
-if(isset($_POST['sub']))
-    {
+    if (isset($_POST['sub'])) {
 		
 		echo $_POST['rem'];
 		
 		$result = mysqli_query($conn,"SELECT * from admin_tbl where admin_name = '".$_POST['username']."'");
 		$row = mysqli_fetch_array($result);
-            $username = $_POST['username'];
-           // $hash = password_hash($_POST['password'] , PASSWORD_DEFAULT);
-           $pass = $_POST['password'];
-            
-            
+        $username = $_POST['username'];
 
-/*             if (!empty($_POST['rem'])) 
-                {
-                    $remember = true;
-                } 
-            else 
-                {
-                    $remember =false;
-                } */
+        // $hash = password_hash($_POST['password'] , PASSWORD_DEFAULT);
+        
+        $pass = $_POST['password'];
+        
+        /*             
+        if (!empty($_POST['rem'])) {
+            $remember = true;
+        } else {
+            $remember =false;
+        } 
+        */
 
-                        //$result = mysqli_query($conn,"SELECT * from admin_tbl where admin_name = '".$_POST['username']."'");
-                        //$row = mysqli_fetch_array($result);
+        //$result = mysqli_query($conn,"SELECT * from admin_tbl where admin_name = '".$_POST['username']."'");
+        //$row = mysqli_fetch_array($result);
 
-						echo $row['admin_pass'];
+		echo $row['admin_pass'];
                     
-                        if($username == $row['admin_name'] && password_verify($pass,$row ['admin_pass']))
-                        {
-							$remember = true;
-                            if ($remembe=true) 
-                                {
-									//$cookie_name = "username";
-                                    //setcookie($cookie_name, $username, time() + (86400 * 30), "/");
-                                } 
-                                else
-                                {
-                                  //setcookie('username', $username, time() - 30);
-                                }
+        if ($username == $row['admin_name'] && 
+            password_verify($pass, $row ['admin_pass'])
+        ) {
+			$remember = true;
+            if ($remembe=true) {
+				//$cookie_name = "username";
+                //setcookie($cookie_name, $username, time() + (86400 * 30), "/");
+            } else {
+                //setcookie('username', $username, time() - 30);
+            }
                             
-                            if (!isset($_SESSION['loggedin'])) {
-                             $_SESSION['username'] = $_POST['username'];
-                            //$_SESSION['message'] = 'Welcome ' . $_SESSION['username'] . '!';
-                            //$_SESSION['msg_type'] = "success";  
-                            header("location:admin-dash.php");
-                        }
-                        else{
-                            header("location:admin-login.php");
-                        }
-                    }
-                        else{
-                            echo "invalid username or password";
-
-                        }
+            if (!isset($_SESSION['loggedin'])) {
+                $_SESSION['username'] = $_POST['username'];
+                //$_SESSION['message'] = 'Welcome ' . $_SESSION['username'] . '!';
+                //$_SESSION['msg_type'] = "success";  
+                header("location:admin-dash.php");
+            } else {
+                header("location:admin-login.php");
+            }
+        } else {
+            echo "invalid username or password";
+        }
                     
-                 
-
-                    }                 
-	}
-
-
-function logoutAction1()
-{
-    
-setcookie("username", "", time() - 700000000000);
-return true;
+    }                 
 }
 
+function logoutAction1() {
+    setcookie("username", "", time() - 70);
+    return true;
+}
 
 ?>
-
-	
 
 <!DOCTYPE html>
 <html lang="en">
