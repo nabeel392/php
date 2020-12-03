@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include ('logout.php');
+//include ('logout.php');
 if (!isset($_SESSION['username']))
  {
     header("location:admin-login.php");

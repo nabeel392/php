@@ -42,7 +42,7 @@ $row = mysqli_fetch_array($result);
                                 } 
                                 else
                                 {
-                                  setcookie('username', $username, time() - 30);
+                                 // setcookie('username', $username, time() - 30);
                                 }
                             session_regenerate_id();
                             $_SESSION['loggedin'] = TRUE;

@@ -86,8 +86,13 @@ if(isset($_POST['sub']))
 	 $sql = "INSERT INTO test.cars_tbl (car_name, car_brand,car_model, car_color ,car_discription,car_image )
 	 VALUES ('$car_name','$car_brand','$car_model','$car_color','$car_discription','$image')";
 	   if (mysqli_query($conn, $sql )) {
-		$_SESSION['message'] = "record has been Added";
-    $_SESSION['msg_type'] = "danger";
+        ?>
+        <script>
+        alert("record added successfully");
+        </script>
+        <?php
+		//$_SESSION['message'] = "record has been Added";
+    //$_SESSION['msg_type'] = "danger";
 	 } else {
 		echo "Error: " . $sql . "" . mysqli_error($conn);
 	 }

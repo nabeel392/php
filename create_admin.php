@@ -49,7 +49,12 @@ if(isset($_POST['sub']))
 	 $sql = "INSERT INTO test.admin_tbl (admin_name, admin_address ,admin_pass)
 	 VALUES ('$admin_name','$admin_address','$admin_pass')";
 	   if (mysqli_query($conn, $sql )) {
-		echo "New record created successfully !";
+           ?>
+        <script>
+        alert("record created successfully");
+        </script>
+        <?php
+		//echo "New record created successfully !";
 	 } else {
 		echo "Error: " . $sql . "
 " . mysqli_error($conn);
