@@ -79,7 +79,7 @@ if(isset($_POST['sub']))
     if (move_uploaded_file($_FILES["car_image"]["tmp_name"], $target_file)) 
       
 
-    $image=basename( $_FILES["car_image"]["name"],".jpg"); // used to store the filename in a variable
+    $image=basename( $_FILES["car_image"]["name"],".jpg"); 
 
 	
   if(($name >= 1) && ($brand >=1) && ($model >=1)&& ($color >=1)&& ($discription >=1)){

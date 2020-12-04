@@ -38,8 +38,8 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
 				<li>Give us a call : +66666666 </li>
 			</ul>
 			<ul class="logreg">
-				<li><a href="php/user_login.php">Login </a> </li>
-				<li><a href="#"><span class="register">Register</span></a></li>
+				<li><a href="user_login.php">Login </a> </li>
+				<li><a href="create_user.php"><span class="register">Register</span></a></li>
 			</ul>
 	</div>
 	<!-- Navbar Up -->
@@ -497,7 +497,7 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
 			<li role="presentation"><a href="#/">CATEGORIES</a></li>
 			<li role="presentation"><a href="#/">PREORDERS</a></li>
 			<li role="presentation"><a href="#/">CONTACT US</a></li>
-			<li role="presentation"><a href="#/">RECEIVE OUR NEWSLETTER</a></li>
+			<li role="presentation"><a href="#">RECEIVE OUR NEWSLETTER</a></li>
 		</ul>
 		<p>"Lorem ipsum dolor sit amet, consectetur,  sed do eiusmod tempor incididunt <br>
 			eiusmod tempor incididunt </p>
@@ -513,7 +513,7 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
 				  &copy; Copy right 2016 | <a href="#">Privacy </a>| <a href="#">Policy</a>
 				</div>
 				<div class="atisda">
-					 Designed by <a href="http://www.webdomus.net/">Web Domus Italia - Web Agency </a> 
+					 Designed by <a href=#>Nabeel Tariq $$ Waleed Jutt </a> 
 				</div>
 			</div>
 	</div>

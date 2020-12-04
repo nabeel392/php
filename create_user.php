@@ -67,7 +67,13 @@ if(isset($_POST['sub']))
 	 $sql = "INSERT INTO test.customer_tbl (cust_name, cust_fname,cust_email, cust_address ,cust_pass)
 	 VALUES ('$cust_name','$cust_fname','$cust_email','$cust_address','$cust_pass')";
 	   if (mysqli_query($conn, $sql )) {
-		echo "New record created successfully !";
+        ?>
+        <script>
+        alert("new user added sucessfully");
+        </script>
+            <?php
+            header("location:index.php");
+		//echo "New record created successfully !";
 	 } else {
 		echo "Error: " . $sql . "" . mysqli_error($conn);
 	 }

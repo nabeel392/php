@@ -1,7 +1,8 @@
 
 <?php
 Session_start();
-
+$image = "";
+$image_src = "";
 
 $servername='localhost';
 $username='root';
@@ -15,6 +16,8 @@ if(isset($_SESSION['message'])):?>
 <?php
 echo $_SESSION['message'];
 unset($_SESSION['message']);
+
+
 
 ?>
 
@@ -68,23 +71,23 @@ endif
 
 
 <div class="limiter">
-		<div class="container-table100">
-			<div class="wrap-table100">
-				<div class="table100 ver1 m-b-110">
-					<table data-vertable="ver1">
-						<thead>
-							<tr class="row100 head">
-								<th class="column100 column1" data-column="column1">ID</th>
-								<th class="column100 column2" data-column="column2">Name</th>
-								<th class="column100 column3" data-column="column3">Brand</th>
-								<th class="column100 column4" data-column="column4">Model</th>
-								<th class="column100 column5" data-column="column5">Color</th>
-								<th class="column100 column6" data-column="column6">Discription</th>
-								<th class="column100 column7" data-column="column7">Image</th>
+<div class="container-table100">
+<div class="wrap-table100">
+<div class="table100 ver1 m-b-110">
+<table data-vertable="ver1">
+<thead>
+<tr class="row100 head">
+<th class="column100 column1" data-column="column1">ID</th>
+<th class="column100 column2" data-column="column2">Name</th>
+<th class="column100 column3" data-column="column3">Brand</th>
+<th class="column100 column4" data-column="column4">Model</th>
+<th class="column100 column5" data-column="column5">Color</th>
+<th class="column100 column6" data-column="column6">Discription</th>
+<th class="column100 column7" data-column="column7">Image</th>
 							
-							</tr>
-						</thead>
-						<?php
+</tr>
+</thead>
+<?php
 $result = mysqli_query($conn,"SELECT * FROM cars_tbl");
 
 if (mysqli_num_rows($result) > 0) {
@@ -95,24 +98,33 @@ $i=0;
 while($row = mysqli_fetch_array($result)) {
 ?>
 <tbody>
-							<tr class="row100">
-								<td class="column100 column1" data-column="column1"><?php   echo  $row["car_id"]   ;   ?></td>
-								<td class="column100 column2" data-column="column2"><?php   echo   $row["car_name"] ;   ?></td>
-								<td class="column100 column3" data-column="column3"><?php   echo   $row["car_brand"]  ;  ?></td>
-								<td class="column100 column4" data-column="column4"><?php   echo    $row["car_model"];   ?></td>
-								<td class="column100 column5" data-column="column5"><?php   echo    $row["car_color"] ;  ?></td>
-								<td class="column100 column6" data-column="column6"><?php   echo     $row["car_discription"] ; ?></td>
-								<td class="column100 column7" data-column="column7"><?php   echo    $row["car_image"]  ; ?></td>
+	<tr class="row100">
+	<td class="column100 column1" data-column="column1"><?php echo $row["car_id"] ; ?></td>
+	<td class="column100 column2" data-column="column2"><?php echo $row["car_name"] ; ?></td>
+	<td class="column100 column3" data-column="column3"><?php echo $row["car_brand"] ; ?></td>
+	<td class="column100 column4" data-column="column4"><?php echo $row["car_model"]; ?></td>
+	<td class="column100 column5" data-column="column5"><?php echo $row["car_color"] ; ?></td>
+	<td class="column100 column6" data-column="column6"><?php echo $row["car_discription"] ; ?></td>
+	<td class="column100 column7" data-column="column7"> 
+	<img src='<?php echo "php/img".$row['car_image'];  ?>' > 
+	</td>
 								
-				<td class="column100 column8" data-column="column8"><p><a href="update.php?update=<?php echo $row{'car_id'}?>">
-				 <button class="item" data-toggle="tooltip" data-placement="top" title="Edit"><i class="zmdi zmdi-edit"></i>Edit 
-                                                    </button></a></p><p><a href="delete.php?delete=<?php echo $row{'car_id'}?>"> 
-				<i class="zmdi zmdi-delete"></i></button>Delete</a></p></td>
+	<td class="column100 column8" data-column="column8">
+	<p>
+	<a href="update.php?update=<?php echo $row{'car_id'}?>">
+	<button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+	<i class="zmdi zmdi-edit">
+	</i>Edit 
+    </button></a></p>
+	<p>
+	<a href="delete.php?delete=<?php echo $row{'car_id'}?>"> 
+	<i class="zmdi zmdi-delete"></i></button>Delete</a>
+	</p></td>
                 
-							</tr>
+	</tr>
 
 							
-						</tbody>
+	</tbody>
 
 <?php
 $i++;
