@@ -10,12 +10,11 @@ $dbname = "test";
 $conn=mysqli_connect($servername,$username,$password,"$dbname");
 
 if(isset($_SESSION['message'])):?>
-    <div class="alert alert-<?=$_SESSION['msg_type']?>">
-    <?php
-    echo $_SESSION['message'];
-    unset($_SESSION['message']);
-    
-    ?>
+<div class="alert alert-<?=$_SESSION['msg_type']?>">
+<?php
+echo $_SESSION['message'];
+unset($_SESSION['message']);
+?>
 
 
 </div>
@@ -77,15 +76,15 @@ if(isset($_POST['sub']))
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
     if (move_uploaded_file($_FILES["car_image"]["tmp_name"], $target_file)) 
-      
-
+    
     $image=basename( $_FILES["car_image"]["name"],".jpg"); 
 
-	
-  if(($name >= 1) && ($brand >=1) && ($model >=1)&& ($color >=1)&& ($discription >=1)){
-	 $sql = "INSERT INTO test.cars_tbl (car_name, car_brand,car_model, car_color ,car_discription,car_image )
-	 VALUES ('$car_name','$car_brand','$car_model','$car_color','$car_discription','$image')";
-	   if (mysqli_query($conn, $sql )) {
+    if (($name >= 1) && ($brand >= 1) && 
+        ($model >= 1) && ($color >= 1) && 
+        ($discription >= 1)) {
+        $sql = "INSERT INTO test.cars_tbl (car_name, car_brand,car_model, car_color ,car_discription,car_image )
+        VALUES ('$car_name','$car_brand','$car_model','$car_color','$car_discription','$image')";
+	    if (mysqli_query($conn, $sql )) {
         ?>
         <script>
         alert("record added successfully");

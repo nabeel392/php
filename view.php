@@ -99,14 +99,14 @@ while($row = mysqli_fetch_array($result)) {
 ?>
 <tbody>
 	<tr class="row100">
-	<td class="column100 column1" data-column="column1"><?php echo $row["car_id"] ; ?></td>
-	<td class="column100 column2" data-column="column2"><?php echo $row["car_name"] ; ?></td>
-	<td class="column100 column3" data-column="column3"><?php echo $row["car_brand"] ; ?></td>
-	<td class="column100 column4" data-column="column4"><?php echo $row["car_model"]; ?></td>
-	<td class="column100 column5" data-column="column5"><?php echo $row["car_color"] ; ?></td>
-	<td class="column100 column6" data-column="column6"><?php echo $row["car_discription"] ; ?></td>
+	<td class="column100 column1" data-column="column1"><?= $row["car_id"] ; ?></td>
+	<td class="column100 column2" data-column="column2"><?= $row["car_name"] ; ?></td>
+	<td class="column100 column3" data-column="column3"><?= $row["car_brand"] ; ?></td>
+	<td class="column100 column4" data-column="column4"><?= $row["car_model"]; ?></td>
+	<td class="column100 column5" data-column="column5"><?= $row["car_color"] ; ?></td>
+	<td class="column100 column6" data-column="column6"><?= $row["car_discription"] ; ?></td>
 	<td class="column100 column7" data-column="column7"> 
-	<img src='<?php echo "php/img".$row['car_image'];  ?>' > 
+	<img src='<?= "img/".$row['car_image'] ?>' class="img-fluid" > 
 	</td>
 								
 	<td class="column100 column8" data-column="column8">
