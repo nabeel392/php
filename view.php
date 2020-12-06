@@ -107,7 +107,7 @@ while($row = mysqli_fetch_array($result)) {
 	<td class="column100 column5" data-column="column5"><?= $row["car_color"] ; ?></td>
 	<td class="column100 column6" data-column="column6"><?= $row["car_discription"] ; ?></td>
 	<td class="column100 column7" data-column="column7"> 
-	<img src='<?= "img/".$row['car_image'] ?>' class="img-fluid" > 
+	<img src='<?= "img/".$row['car_image'] ?>' height="100" width="100" > 
 	</td>
 								
 	<td class="column100 column8" data-column="column8">

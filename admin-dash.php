@@ -76,16 +76,19 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
                                 </a>
                                 <ul class="header3-sub-list list-unstyled">
                                     <li>
-                                        <a href="index.html">Dashboard 1</a>
+                                        <a href="create.php">Add Cars</a>
                                     </li>
                                     <li>
-                                        <a href="index2.html">Dashboard 2</a>
+                                        <a href="create_admin.php">Add Another Admin</a>
                                     </li>
                                     <li>
-                                        <a href="index3.html">Dashboard 3</a>
+                                        <a href="View_admin">Display All Admins</a>
                                     </li>
                                     <li>
-                                        <a href="index4.html">Dashboard 4</a>
+                                        <a href=view.php">Display all Cars</a>
+                                    </li>
+                                    <li>
+                                        <a href=view_user.php">Display all Users</a>
                                     </li>
                                 </ul>
                             </li>
@@ -579,50 +582,6 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
                 </div>
             </section>
             <!-- END WELCOME-->
-
-            <!-- STATISTIC-->
-            <section class="statistic statistic2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-3">
-                           <a href="create.php" > <div class="statistic__item statistic__item--green">
-                                <h2 class="number">Add Cars</h2>
-                                <span class="desc"></span>
-                             
-                            </div></a>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                        <a href="create_admin.php" > <div class="statistic__item statistic__item--orange">
-                                <h2 class="number">Add Admin</h2>
-                                <span class="desc"></span>
-                                
-                            </div></a>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                        <a href="view.php" >  <div class="statistic__item statistic__item--blue">
-                                <h2 class="number">Display Cars</h2>
-                                <span class="desc"></span>
-                                
-                            </div></a>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                        <a href="view_admin.php" > <div class="statistic__item statistic__item--red">
-                                <h2 class="number">View Admin</h2>
-                                <span class="desc"></span>
-                               
-                            </div></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                    <a href="view_user.php" > <div class="statistic__item statistic__item--red">
-                                <h2 class="number">View Customers</h2>
-                                <span class="desc"></span>
-                                
-                            </div></a>
-                        </div>
-                </div>
-            </section>
-            <!-- END STATISTIC-->
 
             <!-- STATISTIC CHART-->
             <section class="statistic-chart">

@@ -96,7 +96,7 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
 				</div>
 			</div>
 			<div class="item">
-				<img src="image/porche.jpg" alt="porche">
+			<img src='<?= "img/".$row['car_image'] ?>' class="img-fluid" > 
 				<div class="carousel-caption">
 					<h2>Porche</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur ,<br>
@@ -175,58 +175,37 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
 	</div>
 	<div class="feturedimage">
 		<div class="row firstrow">
+		<?php
+$result = mysqli_query($conn,"SELECT * FROM cars_tbl");
+if (mysqli_num_rows($result) > 0) {
+?> 
+<?php
+$i=0;
+while($row = mysqli_fetch_array($result)) {
+?>
 			<div class="col-lg-6 costumcol colborder1">
 				<div class="row costumrow">
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
-						<img src="image/featurporch.jpg" alt="porsche">
+					<img src='<?= "img/".$row['car_image'] ?>'height="350" width="150" >
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
 						<div class="featurecontant">
-							<h1>LOREM IPSUM</h1>
-							<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt </p>
+							<h1><?= $row["car_name"] ; ?></h1>
+							<p><?= $row["car_discription"] ; ?> </p>
 			 				<h2>Price &euro;</h2>
 			 				<button id="btnRM" onclick="rmtxt()">READ MORE</button>
-			 				<div id="readmore">
-			 						<h1>Car Name</h1>
-			 						<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt <br>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1 ,
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1<br>
-			 						</p>
-			 						<button id="btnRL">READ LESS</button>
-			 				</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 costumcol colborder2">
-				<div class="row costumrow">
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img2colon">
-						<img src="image/featurporch1.jpg" alt="porsche1">
-					</div>
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
-						<div class="featurecontant">
-							<h1>LOREM IPSUM</h1>
-							<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt </p>
-			 				<h2>Price &euro;</h2>
-			 				<button id="btnRM2">READ MORE</button>
-			 				<div id="readmore2">
-			 						<h1>Car Name</h1>
-			 						<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt <br>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1 ,
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1<br></p>
-			 						<button id="btnRL2">READ LESS</button>
-			 				</div>
+			 				
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<?php
+$i++;
+}
+}
+?>
+
 	</div>
 <!-- ________________________LATEST CARS SECTION _______________________-->
 <div class="latestcars">
@@ -245,232 +224,48 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
 <br>
 <!-- ________________________Latest Cars Image Thumbnail________________-->
 	<div class="grid">
-		<div class="row">
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car1.jpg" alt="car1">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Rolls Royce</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price"> 1000&euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
-				<div class="txthover">
-					<img src="image/car2.jpg" alt="car2">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Renault</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">900 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car3.jpg" alt="car3">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Ford Mustang</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">3000 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car4.jpg" alt="car4">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Rover</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">1000 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car5.jpg" alt="car5">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Porche</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">1200 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car6.jpg" alt="car6">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Porche 911</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">4000 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car7.jpg" alt="car7">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Chevrolet SS</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">3000 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car8.jpg" alt="car8">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Meclaren</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">2500 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>	
-		</div>
+	<?php
+$result = mysqli_query($conn,"SELECT * FROM cars_tbl");
+if (mysqli_num_rows($result) > 0) {
+?> 
+<?php
+$i=0;
+while($row = mysqli_fetch_array($result)) {
+?>
+	<div class="row">
+	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+	<div class="txthover">
+	<img src='<?= "img/".$row['car_image'] ?>' height="400" weight="500" > 
+	<div class="txtcontent">
+	<div class="stars">
+	<div class="glyphicon glyphicon-star"></div>
+	<div class="glyphicon glyphicon-star"></div>
+	<div class="glyphicon glyphicon-star"></div>
+	</div>
+	<div class="simpletxt">
+	<h3 class="name"><?= $row["car_name"] ; ?></h3>
+	<p><?= $row["car_discription"] ; ?> </p>
+	<h4 class="price"> 1000&euro;</h4>
+	<button>READ MORE</button><br>
+	<div class="wishtxt">
+	<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
+	<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
+	</div>
+	</div>
+	<div class="stars2">
+	<div class="glyphicon glyphicon-star"></div>
+	<div class="glyphicon glyphicon-star"></div>
+	<div class="glyphicon glyphicon-star"></div>
+	</div>
+	</div>
+	</div>	 
+	</div>		
+	</div>
+	<?php
+$i++;
+}
+}
+?>
 	</div>
 <!-- _______________________________News Letter ____________________-->
 	<div class="newslettercontent">
