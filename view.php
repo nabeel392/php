@@ -84,6 +84,7 @@ endif
 <th class="column100 column5" data-column="column5">Color</th>
 <th class="column100 column6" data-column="column6">Discription</th>
 <th class="column100 column7" data-column="column7">Image</th>
+<th class="column100 column7" data-column="column7">Action</th>
 							
 </tr>
 </thead>
