@@ -72,7 +72,7 @@ if(isset($_POST['sub']))
         alert("new user added sucessfully");
         </script>
             <?php
-            header("location:index.php");
+            header("location:user_login.php");
 		//echo "New record created successfully !";
 	 } else {
 		echo "Error: " . $sql . "" . mysqli_error($conn);

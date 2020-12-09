@@ -88,14 +88,14 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
 <div id="carousel-up" class="carousel slide" data-ride="carousel">
 <div class="carousel-inner " role="listbox">
 <div class="item active">
-<img src='<?= "img/".$row['car_image'] ?>' class="img-fluid" > 
+<img src="image/benz.jpg" alt="benz">
 <div class="carousel-caption">
 <h2>Porsche 356</h2>
 <p>Lorem ipsum dolor sit amet, consectetur ,<br> sed do eiusmod tempor incididunt ut labore </p>	
 </div>
 </div>
 <div class="item">
-<img src='<?= "img/".$row['car_image'] ?>' class="img-fluid" > 
+<img src="image/benz.jpg" alt="benz">
 <div class="carousel-caption">
 <h2>Porche</h2>
 <p>Lorem ipsum dolor sit amet, consectetur ,<br>
