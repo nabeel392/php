@@ -45,7 +45,7 @@ if (isset($_COOKIE['username'])) {
 			$remember = true;
             if ($remembe=true) {
 				$cookie_name = "username";
-                setcookie($cookie_name, $username, time() + (86400 * 30), "/");
+                setcookie($cookie_name, $username, time() + (86400 * 30));
             } else {
                 //setcookie('username', $username, time() - 30);
             }
