@@ -78,6 +78,7 @@ endif
 <th class="column100 column2" data-column="column2">Name</th>
 <th class="column100 column3" data-column="column3">Email</th>
 <th class="column100 column4" data-column="column4">Password</th>
+<th class="column100 column7" data-column="column7">Action</th>
 
 	
 	</tr>
