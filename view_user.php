@@ -68,23 +68,23 @@ endif
 
 
 <div class="limiter">
-		<div class="container-table100">
-			<div class="wrap-table100">
-				<div class="table100 ver1 m-b-110">
-					<table data-vertable="ver1">
-						<thead>
-							<tr class="row100 head">
-								<th class="column100 column1" data-column="column1">ID</th>
+<div class="container-table100">
+	<div class="wrap-table100">
+<div class="table100 ver1 m-b-110">
+	<table data-vertable="ver1">
+<thead>
+	<tr class="row100 head">
+<th class="column100 column1" data-column="column1">ID</th>
                                 <th class="column100 column2" data-column="column2">Name</th>
                                 <th class="column100 column3" data-column="column3">father name</th>
                                 <th class="column100 column3" data-column="column3">Email</th>
-								<th class="column100 column3" data-column="column3">Address</th>
-								<th class="column100 column4" data-column="column4">Password</th>
-								
-							
-							</tr>
-						</thead>
-						<?php
+<th class="column100 column3" data-column="column3">Address</th>
+<th class="column100 column4" data-column="column4">Password</th>
+
+	
+	</tr>
+</thead>
+<?php
 $result = mysqli_query($conn,"SELECT * FROM customer_tbl");
 
 if (mysqli_num_rows($result) > 0) {
@@ -95,24 +95,24 @@ $i=0;
 while($row = mysqli_fetch_array($result)) {
 ?>
 <tbody>
-							<tr class="row100">
-								<td class="column100 column1" data-column="column1"><?php   echo  $row["cust_id"]   ;   ?></td>
+	<tr class="row100">
+<td class="column100 column1" data-column="column1"><?php   echo  $row["cust_id"]   ;   ?></td>
                                 <td class="column100 column2" data-column="column2"><?php   echo   $row["cust_name"] ;   ?></td>
                                 <td class="column100 column2" data-column="column2"><?php   echo   $row["cust_fname"] ;   ?></td>
                                 <td class="column100 column2" data-column="column2"><?php   echo   $row["cust_email"] ;   ?></td>
-								<td class="column100 column3" data-column="column3"><?php   echo   $row["cust_address"]  ;  ?></td>
-								<td class="column100 column4" data-column="column4"><?php   echo    $row["cust_pass"];   ?></td>
-								
-								
-				<td class="column100 column8" data-column="column8"><p><a href="update_user.php?update=<?php echo $row{'cust_id'}?>">
-				 <button class="item" data-toggle="tooltip" data-placement="top" title="Edit"><i class="zmdi zmdi-edit"></i>Edit 
-                                                    </button></a></p><p><a href="delete_user.php?delete=<?php echo $row{'cust_id'}?>"> 
-				<i class="zmdi zmdi-delete"></i></button>Delete</a></p></td>
-                
-							</tr>
+<td class="column100 column3" data-column="column3"><?php   echo   $row["cust_address"]  ;  ?></td>
+<td class="column100 column4" data-column="column4"><?php   echo    $row["cust_pass"];   ?></td>
 
-							
-						</tbody>
+
+<td class="column100 column8" data-column="column8"><p><a href="update_user.php?update=<?php echo $row{'cust_id'}?>">
+ <button class="item" data-toggle="tooltip" data-placement="top" title="Edit"><i class="zmdi zmdi-edit"></i>Edit 
+                                                    </button></a></p><p><a href="delete_user.php?delete=<?php echo $row{'cust_id'}?>"> 
+<i class="zmdi zmdi-delete"></i></button>Delete</a></p></td>
+                
+	</tr>
+
+	
+</tbody>
 
 <?php
 $i++;
@@ -125,12 +125,12 @@ else{
     echo "No result found";
 }
 
-					  ?>
-					</table>
-				</div>
+	  ?>
+	</table>
+</div>
 
 
-		</div>
+</div>
 	</div>
 
 

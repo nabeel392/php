@@ -17,10 +17,7 @@ if(isset($_SESSION['message'])):?>
 echo $_SESSION['message'];
 unset($_SESSION['message']);
 
-
-
 ?>
-
 
 </div>
 
@@ -85,7 +82,7 @@ endif
 <th class="column100 column6" data-column="column6">Discription</th>
 <th class="column100 column7" data-column="column7">Image</th>
 <th class="column100 column7" data-column="column7">Action</th>
-							
+	
 </tr>
 </thead>
 <?php
@@ -109,7 +106,7 @@ while($row = mysqli_fetch_array($result)) {
 	<td class="column100 column7" data-column="column7"> 
 	<img src='<?= "img/".$row['car_image'] ?>' height="100" width="100" > 
 	</td>
-								
+
 	<td class="column100 column8" data-column="column8">
 	<p>
 	<a href="update.php?update=<?php echo $row{'car_id'}?>">
@@ -124,7 +121,7 @@ while($row = mysqli_fetch_array($result)) {
                 
 	</tr>
 
-							
+	
 	</tbody>
 
 <?php
@@ -138,12 +135,12 @@ else{
     echo "No result found";
 }
 
-					  ?>
-					</table>
-				</div>
+	  ?>
+	</table>
+</div>
 
 
-		</div>
+</div>
 	</div>
 
 

@@ -80,16 +80,16 @@ if(isset($_POST['sub']))
     $image=basename( $_FILES["car_image"]["name"]); 
 
     if (($name >= 1) && ($brand >= 1) && 
-        ($model >= 1) && ($color >= 1) && 
-        ($discription >= 1)) {
-        $sql = "INSERT INTO test.cars_tbl (car_name, car_brand,car_model, car_color ,car_discription,car_image )
-        VALUES ('$car_name','$car_brand','$car_model','$car_color','$car_discription','$image')";
+($model >= 1) && ($color >= 1) && 
+($discription >= 1)) {
+$sql = "INSERT INTO test.cars_tbl (car_name, car_brand,car_model, car_color ,car_discription,car_image )
+VALUES ('$car_name','$car_brand','$car_model','$car_color','$car_discription','$image')";
 	    if (mysqli_query($conn, $sql )) {
-        ?>
-        <script>
-        alert("record added successfully");
-        </script>
-        <?php
+?>
+<script>
+alert("record added successfully");
+</script>
+<?php
 		//$_SESSION['message'] = "record has been Added";
     //$_SESSION['msg_type'] = "danger";
 	 } else {
@@ -109,11 +109,7 @@ alert("invalid");
 }
 
     ?>
-
-
-
-
-
+\
 <!DOCTYPE html>
 <html lang="en">
 
@@ -153,64 +149,64 @@ alert("invalid");
 
 <body class="animsition">
    
-        <div class="page-content--bge5">
-            <div class="container">
-                <div class="login-wrap">
-                    <div class="login-content">
-                        <div class="login-logo">
-                        <h1>  Add Cars</h1>
-                        </div>
-                        <div class="login-form">
-                            <form action="" method="post" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <label>Car Name</label>
-                                    <input class="au-input au-input--full" class="text" type="text" name="car_name" placeholder="your name" required >
-                                </div>
-                                <div class="form-group">
-                                    <label>Car Brand</label>
-                                    <input class="au-input au-input--full"  class="text " type="text" name="car_brand" placeholder="brand name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Model</label>
-                                    <input class="au-input au-input--full"type="text"  name="car_model" placeholder="model here" required >
-                                </div>
-                                <div class="form-group">
-                                    <label>Color</label>
-                                    <input class="au-input au-input--full" type="text" name="car_color" placeholder="color here" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Description</label>
-                                    <input class="au-input au-input--full" type="text" name="car_discription" placeholder="description here" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Image</label>
-                                    <input class="au-input au-input--full" type="file" name="car_image" required>
-                                </div>
-                              
-                                <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="aggree">Agree the terms and policy
-                                    </label>
-                                </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="sub">Click to Add</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="register-link">
-                                <p>
-                                    Already have account?
-                                    <a href="#">Sign In</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="page-content--bge5">
+    <div class="container">
+<div class="login-wrap">
+    <div class="login-content">
+<div class="login-logo">
+<h1>  Add Cars</h1>
+</div>
+<div class="login-form">
+    <form action="" method="post" enctype="multipart/form-data">
+<div class="form-group">
+    <label>Car Name</label>
+    <input class="au-input au-input--full" class="text" type="text" name="car_name" placeholder="your name" required >
+</div>
+<div class="form-group">
+    <label>Car Brand</label>
+    <input class="au-input au-input--full"  class="text " type="text" name="car_brand" placeholder="brand name" required>
+</div>
+<div class="form-group">
+    <label>Model</label>
+    <input class="au-input au-input--full"type="text"  name="car_model" placeholder="model here" required >
+</div>
+<div class="form-group">
+    <label>Color</label>
+    <input class="au-input au-input--full" type="text" name="car_color" placeholder="color here" required>
+</div>
+<div class="form-group">
+    <label>Description</label>
+    <input class="au-input au-input--full" type="text" name="car_discription" placeholder="description here" required>
+</div>
+<div class="form-group">
+    <label>Image</label>
+    <input class="au-input au-input--full" type="file" name="car_image" required>
+</div>
+      
+<div class="login-checkbox">
+    <label>
+<input type="checkbox" name="aggree">Agree the terms and policy
+    </label>
+</div>
+<button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="sub">Click to Add</button>
+<div class="social-login-content">
+    <div class="social-button">
+<button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
+<button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
+    </div>
+</div>
+    </form>
+    <div class="register-link">
+<p>
+    Already have account?
+    <a href="#">Sign In</a>
+</p>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
 
     
 

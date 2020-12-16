@@ -7,9 +7,6 @@ $password='';
 $dbname = "test";
 $conn=mysqli_connect($servername,$username,$password,"$dbname");
 
-
-
-
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 if(isset($_POST['sub']))
@@ -49,11 +46,11 @@ if(isset($_POST['sub']))
 	 $sql = "INSERT INTO test.admin_tbl (admin_name, admin_address ,admin_pass)
 	 VALUES ('$admin_name','$admin_address','$admin_pass')";
 	   if (mysqli_query($conn, $sql )) {
-           ?>
-        <script>
-        alert("record created successfully");
-        </script>
-        <?php
+   ?>
+<script>
+alert("record created successfully");
+</script>
+<?php
 		//echo "New record created successfully !";
 	 } else {
 		echo "Error: " . $sql . "
@@ -117,53 +114,53 @@ alert("invalid");
 
 <body class="animsition">
    
-        <div class="page-content--bge5">
-            <div class="container">
-                <div class="login-wrap">
-                    <div class="login-content">
-                        <div class="login-logo">
-                            
-                             <h1>  Add Admin</h1>
-                            
-                        </div>
-                        <div class="login-form">
-                            <form action="" method="post">
-                                <div class="form-group">
-                                    <label>Name</label>
-                                    <input class="au-input au-input--full" class="text" type="text" name="admin_name" placeholder="your name" required >
-                                </div>
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input class="au-input au-input--full"  class="text " type="text" name="admin_address" placeholder="Email address" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input class="au-input au-input--full"type="text"  name="admin_pass" placeholder="Password" required >
-                                </div>
-                                <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="aggree">Agree the terms and policy
-                                    </label>
-                                </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="sub">register</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="register-link">
-                                <p>
-                                    Already have account?
-                                    <a href="#">Sign In</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="page-content--bge5">
+<div class="container">
+<div class="login-wrap">
+<div class="login-content">
+<div class="login-logo">
+    
+<h1>  Add Admin</h1>
+    
+</div>
+<div class="login-form">
+    <form action="" method="post">
+   <div class="form-group">
+       <label>Name</label>
+       <input class="au-input au-input--full" class="text" type="text" name="admin_name" placeholder="your name" required >
+   </div>
+   <div class="form-group">
+       <label>Email</label>
+       <input class="au-input au-input--full"  class="text " type="text" name="admin_address" placeholder="Email address" required>
+   </div>
+   <div class="form-group">
+       <label>Password</label>
+       <input class="au-input au-input--full"type="text"  name="admin_pass" placeholder="Password" required >
+   </div>
+   <div class="login-checkbox">
+       <label>
+   <input type="checkbox" name="aggree">Agree the terms and policy
+       </label>
+   </div>
+   <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="sub">register</button>
+   <div class="social-login-content">
+       <div class="social-button">
+   <button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
+   <button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
+       </div>
+   </div>
+    </form>
+    <div class="register-link">
+   <p>
+       Already have account?
+       <a href="#">Sign In</a>
+   </p>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
     
 

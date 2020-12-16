@@ -1,10 +1,16 @@
 <?php
 
 Session_start();
-if (isset($_COOKIE['username'])) 
+
+    if (isset($_COOKIE['username'])) {
+
+$_SESSION['username'] = $_COOKIE['username'];
+
+header("location:index.php");   
+
+    } 
+    else 
     {
-    $_SESSION['username'] = $_COOKIE['username'];
-    }
 
 $servername = "localhost";
 $username = "root";
@@ -14,51 +20,58 @@ $conn = mysqli_connect($servername,$username,$password,$dbname);
 
 if(isset($_POST['sub']))
     {
-            $username = $_POST['username'];
-           // $hash = password_hash($_POST['password'] , PASSWORD_DEFAULT);
-           $pass = $_POST['password'];
-            
-            
-
-            if (isset($_POST['remember'])) 
-                {
-                    $remember = $_POST['remember'];
-                } 
-            else 
-                {
-                    $remember = false;
-                }
 
 $result = mysqli_query($conn,"SELECT * from customer_tbl");
+
 $row = mysqli_fetch_array($result);
 
-                   
-                    
-                        if($username == $row['cust_name'] && password_verify($pass,$row ['cust_pass']))
-                        {
-                            if ($remember) 
-                                {
-                                    setcookie('username', $username, time() + 60);
-                                } 
-                                else
-                                {
-                                 // setcookie('username', $username, time() - 30);
-                                }
-                            session_regenerate_id();
-                            $_SESSION['loggedin'] = TRUE;
-                            //$_SESSION['username'] = $_POST['username'];
-                            //$_SESSION['message'] = 'Welcome ' . $_SESSION['username'] . '!';
-                            //$_SESSION['msg_type'] = "success";  
-                            header("location:index.php");
-                        }
-                        else
-                        {
-                            echo "invalid username or password";
-                        }
-                    
-                 
+    $username = $_POST['username'];
+
+   // $hash = password_hash($_POST['password'] , PASSWORD_DEFAULT);
+   
+   $pass = $_POST['password'];
+
+
+//$result = mysqli_query($conn,"SELECT * from customer_tbl");
+//$row = mysqli_fetch_array($result);
+
+if($username == $row['cust_name'] && password_verify($pass,$row ['cust_pass']))
+{
+
+    if (!empty($_POST['remember'])) {
+
+$cookie_name = "username";
+
+setcookie($cookie_name, $username, time() + (86400 * 30));
+  
+} else {
+
+    setcookie('username', $username, time() - 30);
+    }
+   
+    if (!isset($_SESSION['loggedin'])) {
+
+$_SESSION['username'] = $_POST['username'];
+
+//$_SESSION['message'] = 'Welcome ' . $_SESSION['username'] . '!';
+
+//$_SESSION['msg_type'] = "success";  
+
+header("location:index.php");
+
+    } else {
+
+header("location:user_login.php");
 
     }
+
+} else {
+
+    echo "invalid username or password";
+
+}
+    }
+}
 
 ?>
 
@@ -103,50 +116,50 @@ $row = mysqli_fetch_array($result);
 
 <body class="animsition">
     <div class="page-wrapper">
-        <div class="page-content--bge5">
-            <div class="container">
-                <div class="login-wrap">
-                    <div class="login-content">
-                        <div class="login-logo">
-                        <h1>  User login</h1>
-                        </div>
-                        <div class="login-form">
-                            <form action="user_login.php" method="post">
-                                <div class="form-group">
-                                    <label>Username:</label>
-                                    <input class="au-input au-input--full" type="text" id="uname" name="username" placeholder="Your Name..">
-                                </div>
-                                <div class="form-group">
-                                    <label>Password:</label>
-                                    <input class="au-input au-input--full" type="text" id="pas" name="password" placeholder="Your Password..">
-                                </div>
-                                <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember">Remember Me
-                                    </label>
-                                    <label>
-                                        <a href="#">Forgotten Password?</a>
-                                    </label>
-                                </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="sub">Login</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="register-link">
-                                <p>
-                                    Don't you have account?
-                                    <a href="#">Sign Up Here</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="page-content--bge5">
+    <div class="container">
+<div class="login-wrap">
+    <div class="login-content">
+<div class="login-logo">
+<h1>  User login</h1>
+</div>
+<div class="login-form">
+    <form action="user_login.php" method="post">
+<div class="form-group">
+    <label>Username:</label>
+    <input class="au-input au-input--full" type="text" id="uname" name="username" placeholder="Your Name..">
+</div>
+<div class="form-group">
+    <label>Password:</label>
+    <input class="au-input au-input--full" type="text" id="pas" name="password" placeholder="Your Password..">
+</div>
+<div class="login-checkbox">
+    <label>
+<input type="checkbox" name="remember">Remember Me
+    </label>
+    <label>
+<a href="#">Forgotten Password?</a>
+    </label>
+</div>
+<button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="sub">Login</button>
+<div class="social-login-content">
+    <div class="social-button">
+<button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
+<button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
+    </div>
+</div>
+    </form>
+    <div class="register-link">
+<p>
+    Don't you have account?
+    <a href="#">Sign Up Here</a>
+</p>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
 
     </div>
 

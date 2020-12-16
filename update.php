@@ -42,49 +42,49 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if(isset($_POST['sub']))
     {	 
-        $car_name = $_POST['car_name'];
-        if(preg_match("/[A-Za-z]/",$car_name)){
-        //	$nameErr = "invalid username";
-        //echo " matching";
-        $name = 1;
-        }
-        else{
-            $name = 0;
-        }
+$car_name = $_POST['car_name'];
+if(preg_match("/[A-Za-z]/",$car_name)){
+//	$nameErr = "invalid username";
+//echo " matching";
+$name = 1;
+}
+else{
+    $name = 0;
+}
     
-         $car_brand = $_POST['car_brand'];
-         if(preg_match("/[A-Za-z]/",$car_brand)){
-        //echo " matching";
-        $brand = 1;
-        }
-        else{
-            $brand= 0;
-        }
-        $car_model = $_POST['car_model'];
-        if(preg_match("/[A-Za-z]/",$car_model)){
-        //	$nameErr = "invalid username";
-        //echo " matching";
-        $model = 1;
-        }
-        else{
-            $model = 0;
-        }
-        
-         $car_color= $_POST['car_color'];
-         if(preg_match("/[A-Za-z0-9]/",$car_color)){
-        //echo " matching";
-        $color = 1;}
-        else{
-            $color = 0;
-        }
-        $car_discription = $_POST['car_discription'];
-         if(preg_match("/[A-Za-z0-9]/",$car_discription)){
-        //echo " matching";
-        $discription = 1;}
-        else{
-            $discription = 0;
-        }
-        $target_dir = "img/";
+ $car_brand = $_POST['car_brand'];
+ if(preg_match("/[A-Za-z]/",$car_brand)){
+//echo " matching";
+$brand = 1;
+}
+else{
+    $brand= 0;
+}
+$car_model = $_POST['car_model'];
+if(preg_match("/[A-Za-z]/",$car_model)){
+//	$nameErr = "invalid username";
+//echo " matching";
+$model = 1;
+}
+else{
+    $model = 0;
+}
+
+ $car_color= $_POST['car_color'];
+ if(preg_match("/[A-Za-z0-9]/",$car_color)){
+//echo " matching";
+$color = 1;}
+else{
+    $color = 0;
+}
+$car_discription = $_POST['car_discription'];
+ if(preg_match("/[A-Za-z0-9]/",$car_discription)){
+//echo " matching";
+$discription = 1;}
+else{
+    $discription = 0;
+}
+$target_dir = "img/";
     $target_file = $target_dir . basename($_FILES["car_image"]["name"]);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -164,44 +164,44 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 <body class="animsition">
     <div class="page-wrapper">
-        <div class="page-content--bge5">
-            <div class="container">
-                <div class="login-wrap">
-                    <div class="login-content">
-                        <div class="login-logo">
-                            <a href="#">
-                                <img src="images/icon/logo.png" alt="CoolAdmin">
-                            </a>
-                        </div>
-                        <div class="login-form">
-                            <form action="update.php?update=<?=$_GET['update'] ?>" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="car_id" value="<?php echo $id;?>"   >
-                            <div class="form-group">
-                                    <label>Car Name</label>
-                                    <input class="au-input au-input--full" class="text" type="text" name="car_name" placeholder="your name" required >
-                                </div>
-                                <div class="form-group">
-                                    <label>Car Brand</label>
-                                    <input class="au-input au-input--full"  class="text " type="text" name="car_brand" placeholder="brand name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Model</label>
-                                    <input class="au-input au-input--full"type="text"  name="car_model" placeholder="model here" required >
-                                </div>
-                                <div class="form-group">
-                                    <label>Color</label>
-                                    <input class="au-input au-input--full" type="text" name="car_color" placeholder="color here" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Description</label>
-                                    <input class="au-input au-input--full" type="text" name="car_discription" placeholder="description here" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Image</label>
-                                    <input class="au-input au-input--full" type="file"name="car_image" required>
-                                </div>
-                              
-                                <?php
+<div class="page-content--bge5">
+    <div class="container">
+<div class="login-wrap">
+    <div class="login-content">
+<div class="login-logo">
+    <a href="#">
+<img src="images/icon/logo.png" alt="CoolAdmin">
+    </a>
+</div>
+<div class="login-form">
+    <form action="update.php?update=<?=$_GET['update'] ?>" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="car_id" value="<?php echo $id;?>"   >
+    <div class="form-group">
+    <label>Car Name</label>
+    <input class="au-input au-input--full" class="text" type="text" name="car_name" placeholder="your name" required >
+</div>
+<div class="form-group">
+    <label>Car Brand</label>
+    <input class="au-input au-input--full"  class="text " type="text" name="car_brand" placeholder="brand name" required>
+</div>
+<div class="form-group">
+    <label>Model</label>
+    <input class="au-input au-input--full"type="text"  name="car_model" placeholder="model here" required >
+</div>
+<div class="form-group">
+    <label>Color</label>
+    <input class="au-input au-input--full" type="text" name="car_color" placeholder="color here" required>
+</div>
+<div class="form-group">
+    <label>Description</label>
+    <input class="au-input au-input--full" type="text" name="car_discription" placeholder="description here" required>
+</div>
+<div class="form-group">
+    <label>Image</label>
+    <input class="au-input au-input--full" type="file"name="car_image" required>
+</div>
+      
+<?php
 					if($update == true):
 						?>      
 			
@@ -209,30 +209,30 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			<?php
 			endif
 			?>
-                                <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="aggree">Agree the terms and policy
-                                    </label>
-                                </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="update">Update</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="register-link">
-                                <p>
-                                    Already have account?
-                                    <a href="#">Sign In</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="login-checkbox">
+    <label>
+<input type="checkbox" name="aggree">Agree the terms and policy
+    </label>
+</div>
+<button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="update">Update</button>
+<div class="social-login-content">
+    <div class="social-button">
+<button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
+<button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
+    </div>
+</div>
+    </form>
+    <div class="register-link">
+<p>
+    Already have account?
+    <a href="#">Sign In</a>
+</p>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
 
     </div>
 
