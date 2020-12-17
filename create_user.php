@@ -60,19 +60,19 @@ if(isset($_POST['sub']))
 	else{
 		$c= 0;
 	}
-        
+
        
 	
   if(($name >= 1) && ($fname >=1) && ($email >=1)&& ($address >=1)&& ($c >=1)){
 	 $sql = "INSERT INTO test.customer_tbl (cust_name, cust_fname,cust_email, cust_address ,cust_pass)
 	 VALUES ('$cust_name','$cust_fname','$cust_email','$cust_address','$cust_pass')";
 	   if (mysqli_query($conn, $sql )) {
-        ?>
-        <script>
-        alert("new user added sucessfully");
-        </script>
-            <?php
-            header("location:user_login.php");
+?>
+<script>
+alert("new user added sucessfully");
+</script>
+    <?php
+    header("location:user_login.php");
 		//echo "New record created successfully !";
 	 } else {
 		echo "Error: " . $sql . "" . mysqli_error($conn);
@@ -134,61 +134,61 @@ alert("invalid");
 
 <body class="animsition">
    
-        <div class="page-content--bge5">
-            <div class="container">
-                <div class="login-wrap">
-                    <div class="login-content">
-                        <div class="login-logo">
-                        <h1>  Add User</h1>
-                        </div>
-                        <div class="login-form">
-                            <form action="" method="post">
-                                <div class="form-group">
-                                    <label>Name</label>
-                                    <input class="au-input au-input--full" class="text" type="text" name="cust_name" placeholder="your name" required >
-                                </div>
-                                <div class="form-group">
-                                    <label>Fathername</label>
-                                    <input class="au-input au-input--full"  class="text " type="text" name="cust_fname" placeholder="father name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input class="au-input au-input--full"type="text"  name="cust_email" placeholder="email here" required >
-                                </div>
-                                <div class="form-group">
-                                    <label>Address</label>
-                                    <input class="au-input au-input--full" type="text" name="cust_address" placeholder="address here" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input class="au-input au-input--full" type="text" name="cust_pass" placeholder="password" required>
-                                </div>
-                                
-                              
-                                <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="aggree">Agree the terms and policy
-                                    </label>
-                                </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="sub">Click to Add</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="register-link">
-                                <p>
-                                    Already have account?
-                                    <a href="#">Sign In</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="page-content--bge5">
+    <div class="container">
+<div class="login-wrap">
+    <div class="login-content">
+<div class="login-logo">
+<h1>  Add User</h1>
+</div>
+<div class="login-form">
+    <form action="" method="post">
+<div class="form-group">
+    <label>Name</label>
+    <input class="au-input au-input--full" class="text" type="text" name="cust_name" placeholder="your name" required >
+</div>
+<div class="form-group">
+    <label>Fathername</label>
+    <input class="au-input au-input--full"  class="text " type="text" name="cust_fname" placeholder="father name" required>
+</div>
+<div class="form-group">
+    <label>Email</label>
+    <input class="au-input au-input--full"type="text"  name="cust_email" placeholder="email here" required >
+</div>
+<div class="form-group">
+    <label>Address</label>
+    <input class="au-input au-input--full" type="text" name="cust_address" placeholder="address here" required>
+</div>
+<div class="form-group">
+    <label>Password</label>
+    <input class="au-input au-input--full" type="text" name="cust_pass" placeholder="password" required>
+</div>
+
+      
+<div class="login-checkbox">
+    <label>
+<input type="checkbox" name="aggree">Agree the terms and policy
+    </label>
+</div>
+<button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="sub">Click to Add</button>
+<div class="social-login-content">
+    <div class="social-button">
+<button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
+<button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
+    </div>
+</div>
+    </form>
+    <div class="register-link">
+<p>
+    Already have account?
+    <a href="#">Sign In</a>
+</p>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
 
     
 
