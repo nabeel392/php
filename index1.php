@@ -27,9 +27,9 @@
 			<label for="pwd">City:</label>
 			<select name="city" id="city" class="form-control">
 				<option value="">Select</option>
-				<option value="Delhi">Delhi</option>
-				<option value="Mumbai">Mumbai</option>
-				<option value="Pune">Pune</option>
+				<option value="Rawalpindi">Rawalpindi</option>
+				<option value="Islamabad">Islamabad</option>
+				<option value="Lahore">Lahore</option>
 			</select>
 		</div>
 		<input type="button" name="save" class="btn btn-primary" value="Save to database" id="butsave">

@@ -28,7 +28,7 @@
 			<input type="text" class="form-control" id="address" placeholder="Address" name="address">
 		</div>
         <div class="form-group">
-			<label for="pwd">Password:</label>
+			<label for="email">Password:</label>
 			<input type="text" class="form-control" id="pass" placeholder="Password" name="pass">
 		</div>
 	
