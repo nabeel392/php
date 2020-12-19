@@ -26,9 +26,11 @@
                 <td>{{x.cust_email}}</td>
                 <td>{{x.cust_address}}</td>
                 <td>{{x.cust_pass}}</td>
-                <td align="center">
-                    <button ng-click="delete_data(x.cust_id )"class="btn btn-danger">X</button>
-                </td>
+                <td>
+                        <button class="btn btn-danger btn-xs" ng-click="delete_data(x.cust_id )">
+                            <span class="glyphicon glyphicon-trash"></span> Delete
+                        </button>
+                    </td>
             </tr>
         </table>
     </div>
