@@ -91,7 +91,8 @@ app.controller("controller", function($scope, $http) {
                     'cust_id': $scope.cust_id
                 }
             ).success(function(data) {
-                alert(data);
+                //alert(data);
+                console.log(data);
                 $scope.cust_name = null;
                 $scope.cust_fname = null;
                 $scope.cust_email = null;

@@ -19,8 +19,11 @@ if (count($info) > 0) {
     }
     if ($btn_name == 'Update') {
         $id    = $info->cust_id;
-        $query = "UPDATE customer_tbl SET cust_name = '$name', cust_fname = '$fname', cust_email = '$email' 
-        ,cust_address = '$address' ,cust_ pass= '$pass' WHERE cust_id = '$id'";
+        $query = "UPDATE customer_tbl SET cust_name = '$name', cust_fname = '$fname', 
+        cust_email = '$email' 
+        ,cust_address = '$address' ,cust_pass= '$pass' WHERE cust_id = $id";
+        
+        //echo $query;
         if (mysqli_query($conn, $query)) {
             echo 'Data Updated Successfully...';
         } else {
