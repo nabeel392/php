@@ -2,10 +2,10 @@ var app = angular.module('myApp', ['ngRoute']);
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
         templateUrl: 'page.php'
-    }).when('/firstpage', {
-        templateUrl: 'firstpage.php'
-    }).when('/secondpage', {
-        templateUrl: 'secondpage.php',
+    }).when('/angular_view', {
+        templateUrl: 'angular_view.php'
+    }).when('/createe_user', {
+        templateUrl: 'createe_user.php',
         //controller: 'carsController'
     }).when('/thirdpage', {
         templateUrl: 'thirdpage.php',
