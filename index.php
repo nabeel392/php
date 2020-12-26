@@ -14,7 +14,7 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Scarica gratis GARAGE Template html/css - Web Domus Italia - Web Agency </title>
+	<title> Car site </title>
 	<meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -23,19 +23,21 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
 	<link rel="stylesheet" type="text/css" href="source/font-awesome-4.5.0/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="style/slider.css">
 	<link rel="stylesheet" type="text/css" href="style/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="khud.css">
+
 </head>
 <body>
 <!-- Header -->
 <div class="allcontain">
 <div class="header">
 <ul class="socialicon">
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+<!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li>
 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+<li><a href="#"><i class="fa fa-pinterest"></i></a></li> -->
 </ul>
 <ul class="givusacall">
-<li>Give us a call : +66666666 </li>
+<li>Give us a call : +1273918273 </li>
 </ul>
 <ul class="logreg">
 <li><a href="user_login.php">Login </a> </li>
@@ -53,33 +55,34 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
+
 <a class="navbar-brand logo" href="#"><img src="image/logo1.png" alt="logo"></a>
 </div>	 
 </div>
 <div class="collapse navbar-collapse" id="upmenu">
 <ul class="nav navbar-nav" id="navbarontop">
 <li class="active"><a href="#">HOME</a> </li>
-<li class="dropdown">
+<!-- <li class="dropdown">
 <a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIES <span class="caret"></span></a>
 <ul class="dropdown-menu dropdowncostume">
 <li><a href="#">Sport</a></li>
 <li><a href="#">Old</a></li>
-<li><a href="#">New</a></li>
+<li><a href="#">New</a></li> 
 </ul>
 </li>
-<li class="dropdown">
+<!-- <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DEALERS <span class="caret"></span></a>
 <ul class="dropdown-menu dropdowncostume">
 <li><a href="#">1</a></li>
 <li><a href="#">2</a></li>
-<li><a href="3">3</a></li>
+<li><a href="3">3</a></li> 
 </ul>
-</li>
+</li>-->
 <li>
-<a href="contact.html">CONTACT</a>
+<!-- <a href="contact.html">CONTACT</a> -->
  
 </li>
-<button><span class="postnewcar">POST NEW CAR</span></button>
+<!-- <button><span class="postnewcar">POST NEW CAR</span></button> -->
 </ul>
 </div>
 </nav>
@@ -122,7 +125,7 @@ sed do eiusmod tempor incididunt ut labore </p>
 <span class="icon-bar"></span>
 </button>
 </div>
-<div class="collapse navbar-collapse" id="navbarmidle">
+<!-- <div class="collapse navbar-collapse" id="navbarmidle">
 <div class="searchtxt">
 <h1>SEARCH TEXT</h1>
 <form class="navbar-form navbar-left searchformmargin" role="search">
@@ -162,12 +165,12 @@ sed do eiusmod tempor incididunt ut labore </p>
 </li>
 <li class="li-search"> <button class="searchbutton"><span class="glyphicon glyphicon-search "></span></button></li>
 </ul>
- </div>
+ </div> -->
 </nav>
 </div>
 </div>
 <!-- ____________________Featured Section ______________________________--> 
-<div class="allcontain">
+<!-- <div class="allcontain">
 <div class="feturedsection">
 <h1 class="text-center"><span class="bdots">&bullet;</span>F E A T U R E S<span class="carstxt">C A R S</span>&bullet;</h1>
 </div>
@@ -203,11 +206,15 @@ $i++;
 }
 }
 ?>
-	</div>
+	</div> -->
+	
 <!-- ________________________LATEST CARS SECTION _______________________-->
-<div class="latestcars">
-<h1 class="text-center">&bullet; LATEST   CARS &bullet;</h1>
-<ul class="nav nav-tabs navbar-left latest-navleft">
+
+
+
+<div  class="latestcars">
+<h1  class="text-center">&bullet;CARS IMAGES &bullet;</h1>
+<!-- <ul class="nav nav-tabs navbar-left latest-navleft">
 <li role="presentation" class="li-sortby"><span class="sortby">SORT BY: </span></li>
 <li data-filter=".RECENT" role="presentation"><a href="#mostrecent" class="prcBtnR">MOST RECENT </a></li>
 <li data-filter=".POPULAR" role="presentation"><a href="#mostpopular" class="prcBtnR">MOST POPULAR </a></li>
@@ -215,12 +222,51 @@ $i++;
 <li data-filter=".HPRICE" role="presentation"><a href="#" class="prcBtnH">HIGHEST PRICE </a></li>
 <li data-filter=".LPRICE" role="presentation"><a href="#" class="prcBtnL">LOWEST  PRICE </a></li>
 <li id="hideonmobile">
-</ul>
+</ul> -->
 </div>
 <br>
 <br>
 <!-- ________________________Latest Cars Image Thumbnail________________-->
-	<div class="grid">
+
+<section style="box-shadow: 0 0 15px 15px rgba(0,0,0,0.2);" id="plans">
+	      <div class="container">
+	      <!-- <div class="name">
+              <h1> PLACES</h1>
+	      </div> -->
+		  <!-- <h1  class="text-center">&bullet; LATEST   CARS &bullet;</h1> -->
+			
+		  <div class="row">
+		  <?php
+				$result = mysqli_query($conn,"SELECT * FROM cars_tbl");
+				if (mysqli_num_rows($result) > 0) {
+				?> 
+				<?php
+				$i=0;
+				while($row = mysqli_fetch_array($result)) {
+				?>
+	          <div style="padding-right:30px;" class="col-md-4  profile-pic1 text-center">
+	          <div class="image-box1">
+                  <a href=""><img src='<?= "img/".$row['car_image'] ?>' class="img-responsive" </a>
+				  </div>
+				  <ul>
+                  <li>
+				  <h6>NAME:      <?= $row["car_name"] ; ?></h6></li>  
+				</li>
+				<li> <h7>Description:       <?= $row["car_discription"] ; ?> </h7></li>
+                  
+	          </div>
+			  
+			  <?php
+				$i++;
+				}
+				}
+				?>
+			  </div>
+				
+			  </div>
+			  </section>
+
+	<!-- <div class="grid">
 	<?php
 $result = mysqli_query($conn,"SELECT * FROM cars_tbl");
 if (mysqli_num_rows($result) > 0) {
@@ -263,7 +309,7 @@ $i++;
 }
 }
 ?>
-	</div>
+	</div> -->
 <!-- _______________________________News Letter ____________________-->
 	<div class="newslettercontent">
 <div class="leftside">
@@ -275,8 +321,8 @@ $i++;
 </div>
 <div class="rightside">
 <img class="newsimage" src="image/newsletter.jpg" alt="newsletter">
-<input type="text" class="form-control" id="subemail" placeholder="EMAIL">
-<button>SUBSCRIBE</button>
+<!-- <input type="text" class="form-control" id="subemail" placeholder="REGISTER"> -->
+<button> <a href="create_user.php">SUBSCRIBE </a></button>
 </div>
 	</div>
 	<!-- ______________________________________________________Bottom Menu ______________________________-->
@@ -284,25 +330,25 @@ $i++;
 <div class="bottomlogo">
 <span class="dotlogo">&bullet;</span><img src="image/collectionlogo1.png" alt="logo1"><span class="dotlogo">&bullet;;</span>
 </div>
-<ul class="nav nav-tabs bottomlinks">
+<!-- <ul class="nav nav-tabs bottomlinks">
 <li role="presentation" ><a href="#/" role="button">ABOUT US</a></li>
 <li role="presentation"><a href="#/">CATEGORIES</a></li>
 <li role="presentation"><a href="#/">PREORDERS</a></li>
 <li role="presentation"><a href="#/">CONTACT US</a></li>
 <li role="presentation"><a href="#">RECEIVE OUR NEWSLETTER</a></li>
-</ul>
+</ul> -->
 <p>"Lorem ipsum dolor sit amet, consectetur,  sed do eiusmod tempor incididunt <br>
 eiusmod tempor incididunt </p>
  <img src="image/line.png" alt="line"> <br>
  <div class="bottomsocial">
- 	<a href="#"><i class="fa fa-facebook"></i></a>
+ 	<!-- <a href="#"><i class="fa fa-facebook"></i></a>
 <a href="#"><i class="fa fa-twitter"></i></a>
 <a href="#"><i class="fa fa-google-plus"></i></a>
-<a href="#"><i class="fa fa-pinterest"></i></a>
+<a href="#"><i class="fa fa-pinterest"></i></a> -->
 </div>
 <div class="footer">
 	<div class="copyright">
-	  &copy; Copy right 2016 | <a href="#">Privacy </a>| <a href="#">Policy</a>
+	  &copy; Copy right 2016 | <a href="#">Nabeel </a>| <a href="#">Waleed</a>
 	</div>
 	<div class="atisda">
  Designed by <a href=#>Nabeel Tariq $$ Waleed Jutt </a> 

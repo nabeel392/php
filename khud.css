@@ -1,0 +1,92 @@
+#plans .container .name{
+    padding-top: 60px;
+    text-align: center;
+    border-bottom: 5px solid black;
+    font-size: 40px;
+    font-weight: 1000px;
+}
+
+#plans .container .name h1{
+    padding-top: 20px;
+     font-size: 50px;
+    font-weight: bolder;
+font-family: fantasy;
+}
+
+
+#plans .image-box1 img{
+    transition: 0.4s;
+    display: inline;
+    /* border-top-left-radius: 15%; */
+    /* border-bottom-right-radius: 15%; */
+    border: 2px solid #555;
+   /* box-shadow: 0 0 15px 5px rgba(0,0,0,0.7); */
+   height:300px;
+   width:300px;
+   /* padding-left: 50px; */
+   /* margin-left: 50px; */
+}
+
+/* #plans .image-box1 a{
+
+    padding-right: 40px;
+    padding-left: 40px;
+
+} */
+
+
+#plans .col-md-4 .image-box1{
+    padding-top: 80px;
+padding-bottom:  80px;
+/* padding-right: 40px; */
+}
+
+#plans h6{
+    text-align: left;
+    margin-top: -60px;
+}
+
+#plans .image-box1 img:hover{
+    transform: scale(1.5);
+    /* z-index: 10; */
+     
+}
+
+/* #plans .image-box1 img:hover{
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.7);
+} */
+
+#plans .row ul li{
+    text-align: left;
+    list-style-type: none;
+    text-decoration: none;
+    border-bottom: 1px solid #555;
+}
+
+#plans .button .btn{
+    margin-left: -30px;
+   font-size: 20px;
+       background: #fff;
+    color: black;
+   padding-left: 30px;
+    padding-right: 30px;
+    transition: 0.8s;
+   box-shadow: 0 0 15px 5px rgba(0,0,0,0.7);
+    cursor: pointer;
+    font-family: fantasy;
+    
+    
+}
+
+#plans .button .btn:hover{
+ box-shadow: 0 0 15px 5px rgba(0,0,0,0.7);
+    background:#efefef;
+   
+
+
+}
+
+
+#plans .row{
+    padding-bottom: 80px;
+}

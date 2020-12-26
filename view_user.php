@@ -107,7 +107,7 @@ while($row = mysqli_fetch_array($result)) {
 
 <td class="column100 column8" data-column="column8"><p><a href="update_user.php?update=<?php echo $row{'cust_id'}?>">
  <button class="item" data-toggle="tooltip" data-placement="top" title="Edit"><i class="zmdi zmdi-edit"></i>Edit 
-                    </button></a></p><p><a href="delete_user.php?delete=<?php echo $row{'cust_id'}?>"> 
+</button></a></p><p><a href="delete_user.php?delete=<?php echo $row{'cust_id'}?>"> 
 <i class="zmdi zmdi-delete"></i></button>Delete</a></p></td>
                 
 	</tr>
