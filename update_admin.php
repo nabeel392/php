@@ -72,8 +72,8 @@ else{
 }
     
   if(($name >= 1) && ($address >=1) && ($c >=1)){
-	$sql = "UPDATE admin_tbl Set admin_name = $admin_name ,admin_address = $admin_address,
-    admin_pass = $admin_pass where admin_id = $id";
+	$sql = "UPDATE admin_tbl SET admin_name = '$admin_name' ,admin_address = '$admin_address',
+    admin_pass = '$admin_pass' WHERE admin_id = '$id'";
 	if (mysqli_query($conn, $sql )) {
 		echo "record updated successfully !";
 		?>
@@ -81,9 +81,9 @@ else{
 		alert("record updated successfully");
 		</script>
 			<?php
-	
-	}
 	header("location:view_admin.php");
+	}
+	// header("location:view_admin.php");
 }
 	 else {
 		?>

@@ -8,20 +8,11 @@ $username='root';
 $password='';
 $dbname = "test";
 $conn=mysqli_connect($servername,$username,$password,"$dbname");
-// $id = 0;
-// $update = false;
-// $name = "";
-// $fname = "";
-// $pass = "";
-// $add = "";
-// $phone = "";
-// $email = "";
-// $status = "";
-
 
 if(isset($_GET['update'])){
 	$id = $_GET['update'];
-	// $update = true;
+    // $update = true;
+    
 	$result  = mysqli_query($conn,"SELECT * from cars_tbl where car_id = $id") ; 
 	if(mysqli_num_rows($result) > 0){
 	$row = mysqli_fetch_array($result);
@@ -53,7 +44,7 @@ else{
 }
     
  $car_brand = $_POST['car_brand'];
- if(preg_match("/[A-Za-z]/",$car_brand)){
+ if(preg_match("/[A-Za-z0-9]/",$car_brand)){
 //echo " matching";
 $brand = 1;
 }
@@ -84,22 +75,24 @@ $discription = 1;}
 else{
     $discription = 0;
 }
-$target_dir = "img/";
+
+    $target_dir = "img/";
     $target_file = $target_dir . basename($_FILES["car_image"]["name"]);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
     if (move_uploaded_file($_FILES["car_image"]["tmp_name"], $target_file)) 
-      
 
-    $image=basename( $_FILES["car_image"]["name"]); // used to store the filename in a variable
+    $image=basename( $_FILES["car_image"]["name"]); 
 
-    
+   
+
   if(($name >= 1) && ($brand >=1) && ($model >=1)&& ($color >=1)&& ($discription >=1)){
-	$sql = "UPDATE tbl_user Set car_name = $car_name ,car_brand = $car_brand,car_model = $car_model,car_color = $car_color ,
-    car_discription = $car_discription,car_image = $image where car_id = $id";
+	$sql = "UPDATE cars_tbl SET car_name = '$car_name' , car_brand = '$car_brand', car_model = '$car_model',
+    car_color = '$car_color' , car_discription = '$car_discription', car_image = '$image' WHERE car_id = '$id'";
 	if (mysqli_query($conn, $sql )) {
-		echo "record updated successfully !";
+        echo "record updated successfully !";
+        header("location:view.php");
 		?>
 		<script>
 		alert("record updated successfully");
@@ -107,8 +100,8 @@ $target_dir = "img/";
 			<?php
 	
 	}
-	header("location:view.php");
-}
+	// header("location:view.php");
+
 	 else {
 		?>
 		<script>
@@ -117,8 +110,12 @@ $target_dir = "img/";
 			<?php
 		echo "Error: " . $sql . "
 " . mysqli_error($conn);
-	 }
+     }
+    }
 	 mysqli_close($conn);
+}
+else{
+    echo "invalid sub";
 }
 }
 include_once("top.php");	 
@@ -141,35 +138,30 @@ include_once("top.php");
     <input type="hidden" name="car_id" value="<?php echo $id;?>"   >
     <div class="form-group">
     <label>Car Name</label>
-    <input class="au-input au-input--full" class="text" type="text" name="car_name" placeholder="your name" required >
+    <input class="au-input au-input--full" class="text" type="text" name="car_name" value="<?php echo $car_name; ?>" placeholder="car name" required >
 </div>
 <div class="form-group">
     <label>Car Brand</label>
-    <input class="au-input au-input--full"  class="text " type="text" name="car_brand" placeholder="brand name" required>
+    <input class="au-input au-input--full"  class="text " type="text" name="car_brand" value="<?php echo $car_brand; ?>" placeholder="brand name" required>
 </div>
 <div class="form-group">
     <label>Model</label>
-    <input class="au-input au-input--full"type="text"  name="car_model" placeholder="model here" required >
+    <input class="au-input au-input--full"type="text"  name="car_model" value="<?php echo $car_model; ?>" placeholder="model here" required >
 </div>
 <div class="form-group">
     <label>Color</label>
-    <input class="au-input au-input--full" type="text" name="car_color" placeholder="color here" required>
+    <input class="au-input au-input--full" type="text" name="car_color" value="<?php echo $car_color; ?>" placeholder="color here" required>
 </div>
 <div class="form-group">
     <label>Description</label>
-    <input class="au-input au-input--full" type="text" name="car_discription" placeholder="description here" required>
+    <input class="au-input au-input--full" type="text" name="car_discription" value="<?php echo $car_discription; ?>" placeholder="description here" required>
 </div>
 <div class="form-group">
     <label>Image</label>
-    <input class="au-input au-input--full" type="file"name="car_image" required>
+    <input class="au-input au-input--full" type="file" name="car_image" required>
 </div>
       
-    
-			
-			<!-- <input type="submit" name="update" value="Update"> -->
-			
-
-<button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="update">Update</button>
+<button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="sub">Update</button>
 
 
     </form>

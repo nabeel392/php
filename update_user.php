@@ -8,16 +8,6 @@
         $password='';
         $dbname = "test";
         $conn=mysqli_connect($servername,$username,$password,"$dbname");
-        // $id = 0;
-        // $update = false;
-        // $name = "";
-        // $fname = "";
-        // $pass = "";
-        // $add = "";
-        // $phone = "";
-        // $email = "";
-        // $status = "";
-
 
         if(isset($_GET['update'])){
             $id = $_GET['update'];
@@ -89,8 +79,8 @@
         }
                 
         if(($name >= 1) && ($fname >=1) && ($email >=1) && ($address >=1) && ($c >=1)){
-            $sql = "UPDATE customer_tbl Set cust_name = $cust_name ,cust_fname = $cust_fname,cust_email = $cust_email,
-            cust_address = $cust_address,cust_pass = $cust_pass where cust_id = $id";
+            $sql = "UPDATE customer_tbl SET cust_name = '$cust_name' ,cust_fname = '$cust_fname',cust_email = '$cust_email',
+            cust_address = '$cust_address',cust_pass = '$cust_pass' WHERE cust_id = '$id'";
             if (mysqli_query($conn, $sql )) {
                 echo "record updated successfully !";
                 ?>
@@ -98,9 +88,9 @@
                 alert("record updated successfully");
                 </script>
                     <?php
-            
+              header("location:view_user.php");
             }
-            header("location:view_user.php");
+            // header("location:view_user.php");
         }
             else {
                 ?>
