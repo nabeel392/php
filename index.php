@@ -248,11 +248,11 @@ $i++;
 				?>
 	          <div style="padding-right:30px;" class="col-md-4  profile-pic1 text-center">
 	          <div class="image-box1">
-                  <a href=""><img style=" border: 2px solid white;" src='<?= "img/".$row['car_image'] ?>' class="img-responsive" </a>
+                  <a href=""><img style=" border: 2px solid white;box-shadow: 0 0 15px 5px rgba(0,0,0,0.7);" src='<?= "img/".$row['car_image'] ?>' class="img-responsive" </a>
 				  </div>
 				  <ul>
                   <li style="border-bottom:5px solid white;">
-				  <h6 class="hello" style="color:white;font-size:18px;"><b>NAME: </b>     <?= $row["car_name"] ; ?></h6></li>  
+				 <p style="color:white;font-size:18px;"> <b>NAME: </b>     <?= $row["car_name"] ; ?></p></li>  
 				</li>
 				<li style="border-bottom:5px solid white;"> <h7 style="color:white;"><b>Description:</b>       <?= $row["car_discription"] ; ?> </h7></li>
                   

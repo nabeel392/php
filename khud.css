@@ -1,3 +1,5 @@
+
+
 #plans .container .name{
     padding-top: 60px;
     text-align: center;
@@ -15,7 +17,7 @@ font-family: fantasy;
 
 
 #plans .image-box1 img{
-    transition: 0.4s;
+    transition: 0.2s;
     display: inline;
     /* border-top-left-radius: 15%; */
     /* border-bottom-right-radius: 15%; */
