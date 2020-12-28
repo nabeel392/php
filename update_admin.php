@@ -124,7 +124,7 @@ include_once("top.php");
 </div>
 <div class="form-group">
     <label>Password</label>
-    <input class="au-input au-input--full"type="text"  name="admin_pass" value="<?php echo $admin_pass; ?>" placeholder="Password" required >
+    <input class="au-input au-input--full"type="text"  name="admin_pass" placeholder="Password" required >
 </div>
 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" name="sub">register</button>
 
