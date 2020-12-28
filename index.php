@@ -230,7 +230,7 @@ $i++;
 <br>
 <!-- ________________________Latest Cars Image Thumbnail________________-->
 
-<section style="box-shadow: 0 0 15px 15px rgba(0,0,0,0.2); background-color:purple;" id="plans">
+<section style="box-shadow: 0 0 15px 15px rgba(0,0,0,0.2); background-color:teal;" id="plans">
 	      <div class="container">
 	      <!-- <div class="name">
               <h1> PLACES</h1>
@@ -329,7 +329,7 @@ $i++;
 </div>
 	</div>
 	<!-- ______________________________________________________Bottom Menu ______________________________-->
-	<section style="background-color:purple;box-shadow: 0 0 15px 15px rgba(0,0,0,0.2)">
+	<section style="background-color:teal;box-shadow: 0 0 15px 15px rgba(0,0,0,0.2)">
 	<div class="bottommenu">
 <div class="bottomlogo">
 <span class="dotlogo">&bullet;</span><img src="image/logo1.png" alt="logo"><span class="dotlogo">&bullet;;</span>
