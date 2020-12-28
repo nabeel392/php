@@ -19,7 +19,7 @@ font-family: fantasy;
     display: inline;
     /* border-top-left-radius: 15%; */
     /* border-bottom-right-radius: 15%; */
-    border: 2px solid #555;
+    /* border: 2px solid white; */
    /* box-shadow: 0 0 15px 5px rgba(0,0,0,0.7); */
    height:300px;
    width:300px;
@@ -44,6 +44,7 @@ padding-bottom:  80px;
 #plans h6{
     text-align: left;
     margin-top: -60px;
+    
 }
 
 #plans .image-box1 img:hover{

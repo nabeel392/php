@@ -88,30 +88,31 @@ $conn=mysqli_connect($servername,$username,$password,"$dbname");
 </nav>
 </div>
 <!--_______________________________________ Carousel__________________________________ -->
+<section style="background-color:purple;box-shadow: 0 0 15px 15px rgba(0,0,0,0.2)">
 <div class="allcontain">
 <div id="carousel-up" class="carousel slide" data-ride="carousel">
 <div class="carousel-inner " role="listbox">
 <div class="item active">
-<img src="image/benz.jpg" alt="benz">
+<img src="img/range_rover.jpg" alt="benz">
 <div class="carousel-caption">
-<h2>Porsche 356</h2>
-<p>Lorem ipsum dolor sit amet, consectetur ,<br> sed do eiusmod tempor incididunt ut labore </p>	
+<!-- <h2>Porsche 356</h2>
+<p>Lorem ipsum dolor sit amet, consectetur ,<br> sed do eiusmod tempor incididunt ut labore </p>	 -->
 </div>
 </div>
 <div class="item">
-<img src="image/benz.jpg" alt="benz">
+<img src="img/lambo.jpg" alt="benz">
 <div class="carousel-caption">
-<h2>Porche</h2>
+<!-- <h2>Porche</h2>
 <p>Lorem ipsum dolor sit amet, consectetur ,<br>
-sed do eiusmod tempor incididunt ut labore </p>
+sed do eiusmod tempor incididunt ut labore </p> -->
 </div>
 </div>
 <div class="item">
-<img src="image/benz.jpg" alt="benz">
+<img src="img/dodge.jpg" alt="benz">
 <div class="carousel-caption">
-<h2>Car</h2>
+<!-- <h2>Car</h2>
 <p>Lorem ipsum dolor sit amet, consectetur ,<br>
-sed do eiusmod tempor incididunt ut labore </p>
+sed do eiusmod tempor incididunt ut labore </p> -->
 </div>
 </div>
 </div>
@@ -125,6 +126,7 @@ sed do eiusmod tempor incididunt ut labore </p>
 <span class="icon-bar"></span>
 </button>
 </div>
+</section>
 <!-- <div class="collapse navbar-collapse" id="navbarmidle">
 <div class="searchtxt">
 <h1>SEARCH TEXT</h1>
@@ -228,7 +230,7 @@ $i++;
 <br>
 <!-- ________________________Latest Cars Image Thumbnail________________-->
 
-<section style="box-shadow: 0 0 15px 15px rgba(0,0,0,0.2);" id="plans">
+<section style="box-shadow: 0 0 15px 15px rgba(0,0,0,0.2); background-color:purple;" id="plans">
 	      <div class="container">
 	      <!-- <div class="name">
               <h1> PLACES</h1>
@@ -246,13 +248,13 @@ $i++;
 				?>
 	          <div style="padding-right:30px;" class="col-md-4  profile-pic1 text-center">
 	          <div class="image-box1">
-                  <a href=""><img src='<?= "img/".$row['car_image'] ?>' class="img-responsive" </a>
+                  <a href=""><img style=" border: 2px solid white;" src='<?= "img/".$row['car_image'] ?>' class="img-responsive" </a>
 				  </div>
 				  <ul>
-                  <li>
-				  <h6>NAME:      <?= $row["car_name"] ; ?></h6></li>  
+                  <li style="border-bottom:5px solid white;">
+				  <h6 class="hello" style="color:white;font-size:18px;"><b>NAME: </b>     <?= $row["car_name"] ; ?></h6></li>  
 				</li>
-				<li> <h7>Description:       <?= $row["car_discription"] ; ?> </h7></li>
+				<li style="border-bottom:5px solid white;"> <h7 style="color:white;"><b>Description:</b>       <?= $row["car_discription"] ; ?> </h7></li>
                   
 	          </div>
 			  
@@ -311,6 +313,7 @@ $i++;
 ?>
 	</div> -->
 <!-- _______________________________News Letter ____________________-->
+
 	<div class="newslettercontent">
 <div class="leftside">
 <img src="image/border.png" alt="border">
@@ -326,9 +329,10 @@ $i++;
 </div>
 	</div>
 	<!-- ______________________________________________________Bottom Menu ______________________________-->
+	<section style="background-color:purple;box-shadow: 0 0 15px 15px rgba(0,0,0,0.2)">
 	<div class="bottommenu">
 <div class="bottomlogo">
-<span class="dotlogo">&bullet;</span><img src="image/collectionlogo1.png" alt="logo1"><span class="dotlogo">&bullet;;</span>
+<span class="dotlogo">&bullet;</span><img src="image/logo1.png" alt="logo"><span class="dotlogo">&bullet;;</span>
 </div>
 <!-- <ul class="nav nav-tabs bottomlinks">
 <li role="presentation" ><a href="#/" role="button">ABOUT US</a></li>
@@ -337,15 +341,19 @@ $i++;
 <li role="presentation"><a href="#/">CONTACT US</a></li>
 <li role="presentation"><a href="#">RECEIVE OUR NEWSLETTER</a></li>
 </ul> -->
-<p>"Lorem ipsum dolor sit amet, consectetur,  sed do eiusmod tempor incididunt <br>
+<p style="color:white;">"Lorem ipsum dolor sit amet, consectetur,  sed do eiusmod tempor incididunt <br>
 eiusmod tempor incididunt </p>
  <img src="image/line.png" alt="line"> <br>
+ 
  <div class="bottomsocial">
  	<!-- <a href="#"><i class="fa fa-facebook"></i></a>
 <a href="#"><i class="fa fa-twitter"></i></a>
 <a href="#"><i class="fa fa-google-plus"></i></a>
 <a href="#"><i class="fa fa-pinterest"></i></a> -->
 </div>
+</section>
+
+<setion>
 <div class="footer">
 	<div class="copyright">
 	  &copy; Copy right 2016 | <a href="#">Nabeel </a>| <a href="#">Waleed</a>
@@ -356,6 +364,7 @@ eiusmod tempor incididunt </p>
 </div>
 	</div>
 </div>
+</section>
 
 <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
 <script type="text/javascript" src="source/js/isotope.js"></script>

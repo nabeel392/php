@@ -46,7 +46,7 @@ if(isset($_POST['sub']))
 		$brand= 0;
 	}
     $car_model = $_POST['car_model'];
-	if(preg_match("/[A-Za-z]/",$car_model)){
+	if(preg_match("/[A-Za-z0-9]/",$car_model)){
 	//	$nameErr = "invalid username";
 	//echo " matching";
 	$model = 1;
