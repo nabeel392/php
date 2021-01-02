@@ -248,7 +248,7 @@ $i++;
 				?>
 	          <div style="padding-right:30px;" class="col-md-4  profile-pic1 text-center">
 	          <div class="image-box1">
-                  <a href=""><img style=" border: 2px solid white;box-shadow: 0 0 15px 5px rgba(0,0,0,0.7);" src='<?= "img/".$row['car_image'] ?>' class="img-responsive" </a>
+                  <a href="img_page.php?update=<?=$row{'car_id'}?>"><img style=" border: 2px solid white;box-shadow: 0 0 15px 5px rgba(0,0,0,0.7);" src='<?= "img/".$row['car_image'] ?>' class="img-responsive" </a>
 				  </div>
 				  <ul>
                   <li style="border-bottom:5px solid white;">
